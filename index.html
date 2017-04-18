@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>bmsystem</title>
+    <link rel="stylesheet" type="text/css"/>
+    <script>
+      //解决ios被动传参延时在该开发模式下的影响
+      window.iosParams = {
+        s1:'',
+        s2:''
+      };
+      function getUserInfo(s1,s2,s3,s4){
+        window.iosParams.s1 = s1;
+        window.iosParams.s2 = s2;
+      }
+
+      window.onload = function(){
+//        getUserInfo(1,2)
+      }
+
+      //解决ios被动传参延时在该开发模式下的影响
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>
