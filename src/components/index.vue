@@ -22,6 +22,8 @@
   import foot from '@/components/littlecomp/footer'
   import ghostBg from '@/components/littlecomp/ghostbg'
   import modal from '@/components/littlecomp/modal'
+  import IF from '@/assets/js/interface'
+  import {BS} from '@/assets/js/base'
 
   export default{
     name:'index',
@@ -34,13 +36,14 @@
         },
         modal:{
           show:false,
+          that:this,
           content:'',
           bookId:'',
           ctrState:'0',
           bookObj:'',
           callback () {
             let i = this.bookObj;
-            let _this = this;
+            let _this = this , that = _this.that , BP = that.$store.state.BP;
             //收藏
             if(i.isCollect == 0){
               BS.getData(IF.addFavorite,'GET',{userId:1,book_id:i.id},true,null,function(d){
@@ -52,7 +55,7 @@
                 _this.show = false
               });
             }else{
-              BS.getData(IF.addFavorite,'GET',{userId:BP.userId,book_Id:i.book_id},true,null,function(d){
+              BS.getData(IF.addFavorite,'GET',{userId:BP.userId,book_Id:i.book_id || i.id },true,null,function(d){
                 switch(d.status){
                   case 404:
                     alert('404');

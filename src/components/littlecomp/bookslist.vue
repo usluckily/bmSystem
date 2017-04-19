@@ -63,6 +63,8 @@
         this.parentModal.show = true;
         this.parentModal.content = text;
         this.parentModal.state = state;
+        console.log('iiiii');
+        console.log(JSON.stringify(this.parentModal.bookObj));
       },
       test () {
 

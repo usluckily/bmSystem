@@ -37,6 +37,7 @@
         },
         modal:{
           show:false,
+          that:this,
           content:'',
           bookId:'',
           ctrState:'0',
@@ -55,7 +56,7 @@
                 _this.show = false
               });
             }else{
-              BS.getData(IF.addFavorite,'GET',{userId:BP.userId,book_Id:i.book_id},true,null,function(d){
+              BS.getData(IF.addFavorite,'GET',{userId:BP.userId,book_Id:i.book_id || i.id },true,null,function(d){
                 switch(d.status){
                   case 404:
                     alert('404');
@@ -74,6 +75,12 @@
     },
     created () {
       let _this = this , BP = _this.$store.state.BP , kind = this.$route.params.id;
+//      setTimeout(function(){
+//        _this.listData.list = [
+//          {"id":"10","book_Name":"上下五百年","book_ISBN":"7414","first_Author":"gdag","book_Kind_Name":"政治、法律","introduce":"dsga","book_Price":"23.0","likes":"9","image":"dga"},
+//          {"id":"5","book_Name":"达芬奇密码","book_ISBN":"5454","first_Author":"hh","book_Kind_Name":"政治、法律","introduce":"ff" ,"book_Price":"555.0","likes":"5","image":"asga"}
+//        ]
+//      },5000);
       BS.getData(IF.getKindList,'GET',{kind:$.trim(kind),userId:BP.userId,school_Id:BP.schoolId},true,null,function(d){
         _this.listData.list = d.data;
       });

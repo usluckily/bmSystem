@@ -16,9 +16,10 @@ Vue.use(Vuex)
 let basicParams = {jjUserId:'',userId:'2',schoolId:'1',classId:'1'};
 if(window.GreenSchool){
   basicParams.jjUserId = GreenSchool.getUserID();
-  GreenSchool.showLeftBtn(false)
-  BS.getData(IF.getUserBasic,'GET',{userId:1},false,null,function(d){
-
+  alert(basicParams.jjUserId);
+  GreenSchool.showLeftBtn(false);
+  BS.getData(IF.getUserBasic,'GET',{jjUserId:basicParams.jjUserId},false,null,function(d){
+    alert(JSON.stringify(d));
   });
 }else{
   // basicParams = iosParams;
