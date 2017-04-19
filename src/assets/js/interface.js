@@ -15,4 +15,7 @@ export default{
   getStatistics:host+'/jjNtBook_book.do?method=readBorrowBy',//schoolId || classId
   getTheBookYouWouldLike:host+'/jjNtBook_book.do?method=loveBookCatalogue',//userId
   userLikes:host+'/jjNtBook_book.do?method=user_Likes',//myUserId , userId
+  getBookKind:host+'/jjNtBook_book.do?method=searchBookKind',//
+  getKindList:host+'/jjNtBook_book.do?method=searchBookCatalogue',//kind , userId , school_Id
+  getHomeBookList:host+'/jjNtBook_book.do?method=randBookCatalogue',//school_Id
 }

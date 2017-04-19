@@ -6,7 +6,7 @@
 
       <my_banner v-show="!outlink.show"></my_banner>
 
-      <my_tab v-show="!outlink.show"></my_tab>
+      <my_tab v-show="!outlink.show" :parentData="tab" ></my_tab>
 
       <div class="content" v-show="!outlink.show">
         <my_cardOne :parentModal="this.parentModal"></my_cardOne>
@@ -25,6 +25,9 @@
   import tab from '@/components/littlecomp/tab'
   import cardOne from '@/components/littlecomp/cardone'
   import outlinks from '@/components/test/outlinks'
+  import IF from '@/assets/js/interface'
+  import {BS} from '@/assets/js/base'
+
   export default{
     name:'pageone',
     props:['show','parentModal'],
@@ -35,6 +38,10 @@
             {title:'图书馆',hash:'/page/1'},
             {title:'电子图书',hash:'/outlinks/'}
           ]
+        },
+        tab:{
+          list:[],
+          test:'asd'
         },
         outlink:{
           show:false
@@ -65,7 +72,10 @@
       }
     },
     created () {
-
+      let _this = this , BP = _this.$store.state.BP;
+      BS.getData(IF.getBookKind,'GET',{},true,null,function(d){
+        _this.tab.list = d.data
+      });
     },
     mounted () {
       let _this = this
