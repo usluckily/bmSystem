@@ -15,6 +15,7 @@
   import bookslist from '@/components/littlecomp/bookslist'
   import ghostBg from '@/components/littlecomp/ghostbg'
   import modal from '@/components/littlecomp/modal'
+  import $ from 'jquery'
   import IF from '@/assets/js/interface'
   import {BS} from '@/assets/js/base'
 
@@ -42,7 +43,7 @@
           bookObj:'',
           callback () {
             let i = this.bookObj;
-            let _this = this;
+            let _this = this , that = _this.that , BP = that.$store.state.BP;
             //收藏
             if(i.isCollect == 0){
               BS.getData(IF.addFavorite,'GET',{userId:1,book_id:i.id},true,null,function(d){
@@ -50,13 +51,21 @@
                   case 404:
                     alert('404');
                     break;
-                  $('').sib
                 }
                 _this.show = false
               });
             }else{
-              alert('本书已在收藏夹');
-              _this.show = false
+              BS.getData(IF.addFavorite,'GET',{userId:BP.userId,book_Id:i.book_id},true,null,function(d){
+                switch(d.status){
+                  case 404:
+                    alert('404');
+                    break;
+                }
+                _this.content = d.error;
+                setTimeout(function(){
+                  _this.show = false
+                },1000);
+              });
             }
 
           }
@@ -64,8 +73,10 @@
       }
     },
     created () {
-      let _this = this , userId = this.$route.params.id;
-
+      let _this = this , BP = _this.$store.state.BP , kind = this.$route.params.id;
+      BS.getData(IF.getKindList,'GET',{kind:$.trim(kind),userId:BP.userId,school_Id:BP.schoolId},true,null,function(d){
+        _this.listData.list = d.data;
+      });
     },
     components:{
       books_list:bookslist,

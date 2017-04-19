@@ -3,7 +3,7 @@
     <ul class="clearfix">
       <li v-for="(i,index) in filteredlist" @click="setHash('/bookclassify/'+i.book_Kind_Code)">
         <div class="tab_img_box">
-          <img :src="i.pic || require('../../assets/img/tabicon/icon'+index+'.png')"/>
+          <img :src="i.pic || require('../../assets/img/tabicon/icon'+(index>6? 1 : index)+'.png')"/>
         </div>
         <span>{{ i.book_Kind_Name }}</span>
       </li>
@@ -52,7 +52,6 @@
       }
     },
     created () {
-      console.log(JSON.stringify(this.parentData));
 //      this.list = this.parentData.list;
     }
   }

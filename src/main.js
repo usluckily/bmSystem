@@ -35,7 +35,8 @@ const store = new Vuex.Store({
       pageThree:false
     },
     iosParams:iosParams,//该绑定为ios的getUserInfo方法的会有延时传递的参数,通过绑定一个全局params，在getUseInfo中修改该对象属性
-    BP:basicParams
+    BP:basicParams,
+    tab:{ list:[] }
   },
   mutations: {
     increment (state) {

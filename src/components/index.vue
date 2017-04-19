@@ -52,8 +52,17 @@
                 _this.show = false
               });
             }else{
-              alert('本书已在收藏夹');
-              _this.show = false
+              BS.getData(IF.addFavorite,'GET',{userId:BP.userId,book_Id:i.book_id},true,null,function(d){
+                switch(d.status){
+                  case 404:
+                    alert('404');
+                    break;
+                }
+                _this.content = d.error;
+                setTimeout(function(){
+                  _this.show = false
+                },1000);
+              });
             }
 
           }

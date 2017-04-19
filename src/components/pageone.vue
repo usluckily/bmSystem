@@ -9,7 +9,7 @@
       <my_tab v-show="!outlink.show" :parentData="tab" ></my_tab>
 
       <div class="content" v-show="!outlink.show">
-        <my_cardOne :parentModal="this.parentModal"></my_cardOne>
+        <books_list :listState="state" :parentModal="this.parentModal" :listData="listData"></books_list>
         <!--<router-view :parentModal="this.parentModal"></router-view>-->
       </div>
 
@@ -22,6 +22,7 @@
 <script>
   import nav from '@/components/littlecomp/nav'
   import banner from '@/components/littlecomp/sliderbanner'
+  import bookslist from '@/components/littlecomp/bookslist'
   import tab from '@/components/littlecomp/tab'
   import cardOne from '@/components/littlecomp/cardone'
   import outlinks from '@/components/test/outlinks'
@@ -39,10 +40,19 @@
             {title:'电子图书',hash:'/outlinks/'}
           ]
         },
-        tab:{
-          list:[],
-          test:'asd'
+        listData:{
+          msg:'msg',
+          list:[
+            {title:'愿你慢慢长大',author:'理想国度',type:'文学',content:'对于观看者，或许借由这些历久弥新的记忆返回，我们每个人...',pic:require('../assets/img/banner.png'),hash:'/article/1',id:'1',ranking:'1',isCollect:0},
+            {title:'你的坚持，终将美好',author:'阿笨',type:'设计',content:'对于观看者，或许借由这些历久弥新的记忆返回，我们每个人...',pic:require('../assets/img/banner.png'),hash:'/article/2',id:'2',ranking:'2',isCollect:1},
+            {title:'孙小渡',author:'阿笨',type:'人文科学',content:'对于观看者，或许借由这些历久弥新的记忆返回，我们每个人...',pic:require('../assets/img/banner.png'),hash:'/article/3',id:'3',ranking:'3',isCollect:1},
+            {title:'孙小渡',author:'阿笨',type:'人文科学',content:'对于观看者，或许借由这些历久弥新的记忆返回，我们每个人...',pic:require('../assets/img/banner.png'),hash:'/article/4',id:'4',ranking:'4',isCollect:1}
+          ]
         },
+        state:{
+          type:'A'
+        },
+        tab:this.$store.state.tab || {list:[]},
         outlink:{
           show:false
         },
@@ -53,6 +63,7 @@
       my_nav:nav,
       my_banner:banner,
       my_tab:tab,
+      books_list:bookslist,
       my_cardOne:cardOne,
       out_link:outlinks
     },
@@ -73,8 +84,18 @@
     },
     created () {
       let _this = this , BP = _this.$store.state.BP;
-      BS.getData(IF.getBookKind,'GET',{},true,null,function(d){
-        _this.tab.list = d.data
+
+      //get tab
+      if(this.$store.state.tab.list == ''){
+        BS.getData(IF.getBookKind,'GET',{},true,null,function(d){
+          _this.tab.list = d.data;
+          _this.$store.state.tab.list = d.data;
+        });
+      }
+
+      //get book list in home page
+      BS.getData(IF.getHomeBookList,'GET',{school_Id:BP.schoolId},true,null,function(d){
+        _this.listData.list = d.data;
       });
     },
     mounted () {
