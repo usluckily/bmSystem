@@ -7,8 +7,8 @@
             <img src="../assets/img/banner.png"/>
           </router-link>
         </div>
-        <h4>阿斯顿</h4>
-        <p>借书证号：123456789</p>
+        <h4>{{ userInfo.Real_Name }}</h4>
+        <p>借书证号：{{ userInfo.borrow_Number }}</p>
       </div>
 
       <div class="content">
@@ -44,7 +44,7 @@
     props:['show'],
     data () {
       return {
-
+        userInfo:this.$store.state.BP,
       }
     },
     components:{
