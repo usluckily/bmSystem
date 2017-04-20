@@ -1,6 +1,11 @@
 <template>
   <div class="card_box">
 
+    <div v-show="data.list.length < 1" class="prompt">
+      <p>暂时没有数据</p>
+    </div>
+    <!--无数据时的提示-->
+
     <div class="card" v-for="i in data.list">
       <!--rank_box-->
       <div class="rank_box" v-if="state.rankIcon">
@@ -46,7 +51,7 @@
     data () {
       return {
         state:this.listState || false,
-        data:this.listData,
+        data: this.listData || {list:[]},
         rankIconShow:this.rankIcon || false
       }
     },
@@ -86,4 +91,6 @@
   .card_foo .r span.single{width:100%;text-align:right;}
   .info_box h4{display:flex;flex-direction: row;align-items:center;justify-content:space-between;}
   .info_box h4 p{width:70%;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+  .prompt{position:fixed;width:100%;height:100%;display:flex;flex-direction: row;align-items:center;justify-content:center;}
+  .prompt p{position: relative;top: -2rem;font-size:0.8rem;}
 </style>

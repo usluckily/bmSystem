@@ -9,11 +9,13 @@
       //解决ios被动传参延时在该开发模式下的影响
       window.iosParams = {
         s1:'',
-        s2:''
+        s2:'',
+        userId:''
       };
-      function getUserInfo(s1,s2,s3,s4){
+      function getUserInfo(s1,s2,s3,s4,s5,s6,s7,s8){
         window.iosParams.s1 = s1;
         window.iosParams.s2 = s2;
+        window.iosParams.userId = s7;
       }
 
       window.onload = function(){

@@ -23,8 +23,19 @@ if(window.GreenSchool){
     }
   })
 }else{
-  // basicParams = iosParams;
-  // alert(JSON.stringify(basicParams))
+  //轮询检测ios端参数是否传到
+  setInterval(function(){
+    if(window.iosParams.userId != ''){
+      basicParams.jjUserId = window.iosParams.userId;
+
+      BS.getData(IF.getUserBasic,'GET',{jjUserId:basicParams.jjUserId},false,null,function(d){
+        for(var i in d.data){
+          basicParams[i] = d.data[i]
+        }
+      })
+    }
+  },50)
+
 }
 
 
