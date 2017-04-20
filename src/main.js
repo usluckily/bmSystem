@@ -13,7 +13,7 @@ Vue.config.productionTip = false
 Vue.use(Vuex)
 
 
-let basicParams = {jjUserId:'',userId:'2',schoolId:'1',classId:'1',Real_Name:'',likes:'',image:'',borrow_Number:'',Ic_Number:'',sex:''};
+let basicParams = {jjUserId:'',userId:'2',schoolId:'1',classId:'1',Real_Name:'',likes:'',image:'',borrow_Number:'',Ic_Number:'',sex:'',className:''};
 if(window.GreenSchool){
   basicParams.jjUserId = GreenSchool.getUserID();
   GreenSchool.showLeftBtn(false);

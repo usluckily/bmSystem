@@ -4,7 +4,7 @@
       <ul class="info_list">
         <li>
           <span class="l">头像</span>
-          <span class="r"><img src="../assets/img/banner.png"/> <img src="../assets/img/banner.png"/> </span>
+          <span class="r"><img src="../assets/img/banner.png"/></span>
         </li>
         <li>
           <span class="l">昵称</span>
@@ -12,14 +12,13 @@
         </li>
         <li>
           <span class="l">班级</span>
-          <span class="r">三年xxxx班</span>
+          <span class="r">{{ userInfo.className }}</span>
         </li>
         <li>
           <span class="l">IC卡号</span>
           <span class="r">{{ userInfo.Ic_Number }}</span>
         </li>
       </ul>
-      <p>{{ userInfo }}</p>
     </div>
   </transition>
 </template>
