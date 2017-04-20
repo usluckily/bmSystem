@@ -4,21 +4,22 @@
       <ul class="info_list">
         <li>
           <span class="l">头像</span>
-          <span class="r"><img src="../assets/img/banner.png"/></span>
+          <span class="r"><img src="../assets/img/banner.png"/> <img src="../assets/img/banner.png"/> </span>
         </li>
         <li>
           <span class="l">昵称</span>
-          <span class="r">李小红 </span>
+          <span class="r">{{ userInfo.Real_Name }} </span>
         </li>
         <li>
           <span class="l">班级</span>
-          <span class="r">三年一班</span>
+          <span class="r">三年xxxx班</span>
         </li>
         <li>
           <span class="l">IC卡号</span>
-          <span class="r">123456789</span>
+          <span class="r">{{ userInfo.Ic_Number }}</span>
         </li>
       </ul>
+      <p>{{ userInfo }}</p>
     </div>
   </transition>
 </template>
@@ -27,8 +28,12 @@
     name:'personinfo',
     data () {
       return {
-
+        userInfo:this.$store.state.BP,
+        xxx:'asd'
       }
+    },
+    created () {
+//      alert(JSON.stringify(this.$store.state.BP));
     }
   }
 </script>

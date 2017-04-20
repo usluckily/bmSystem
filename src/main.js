@@ -13,14 +13,15 @@ Vue.config.productionTip = false
 Vue.use(Vuex)
 
 
-let basicParams = {jjUserId:'',userId:'2',schoolId:'1',classId:'1'};
+let basicParams = {jjUserId:'',userId:'2',schoolId:'1',classId:'1',Real_Name:'',likes:'',image:'',borrow_Number:'',Ic_Number:'',sex:''};
 if(window.GreenSchool){
   basicParams.jjUserId = GreenSchool.getUserID();
-  alert(basicParams.jjUserId);
   GreenSchool.showLeftBtn(false);
   BS.getData(IF.getUserBasic,'GET',{jjUserId:basicParams.jjUserId},false,null,function(d){
-    alert(JSON.stringify(d));
-  });
+    for(var i in d.data){
+      basicParams[i] = d.data[i]
+    }
+  })
 }else{
   // basicParams = iosParams;
   // alert(JSON.stringify(basicParams))

@@ -29,6 +29,7 @@
   import IF from '@/assets/js/interface'
   import {BS} from '@/assets/js/base'
 
+
   export default{
     name:'pageone',
     props:['show','parentModal'],

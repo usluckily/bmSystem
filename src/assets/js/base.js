@@ -10,7 +10,7 @@ let month = (parseInt(date.getMonth())+1)<10 ? "0"+(parseInt(date.getMonth())+1)
 let day = date.getDate()<10 ? "0" + date.getDate() : date.getDate();
 
 function Ajax(url,type,data,async,callback){
-//    alert(JSON.stringify(d));
+   // alert(JSON.stringify(data));
 //    alert(url);
   $.ajax({
     url:url,
@@ -23,7 +23,7 @@ function Ajax(url,type,data,async,callback){
       // $('.layout').css({'display':'block'});
     },
     success:function(d){
-
+      // alert(JSON.stringify(d));
       if(callback) callback(d);
 
       setTimeout(function(){
@@ -31,6 +31,7 @@ function Ajax(url,type,data,async,callback){
       },500)
     },
     error: function(e){
+      // alert('err'+JSON.stringify(e));
       if(callback) callback(e);
     }
   });
