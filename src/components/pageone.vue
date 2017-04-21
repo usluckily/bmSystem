@@ -88,14 +88,14 @@
 
       //get tab
       if(this.$store.state.tab.list == ''){
-        BS.getData(IF.getBookKind,'GET',{},true,null,function(d){
+        BS.getData(IF.getBookKind,'GET',{userId:BP.userId},true,null,function(d){
           _this.tab.list = d.data;
           _this.$store.state.tab.list = d.data;
         });
       }
 
       //get book list in home page
-      BS.getData(IF.getHomeBookList,'GET',{school_Id:BP.schoolId},true,null,function(d){
+      BS.getData(IF.getHomeBookList,'GET',{school_Id:BP.schoolId,userId:BP.userId},true,null,function(d){
         _this.listData.list = d.data;
       });
     },

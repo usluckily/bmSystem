@@ -6,15 +6,17 @@
     <title>Title</title>
 </head>
 <body>
-<p id="id">阿萨空间大哈空间等哈开始接电话卡死的贺卡寄售点卡时间的话框架</p>
+<p id="idxx">阿萨空间大哈空间等哈开始接电话卡死的贺卡寄售点卡时间的话框架</p>
+<input id="input"/>
 </body>
 <script>
-  $('#id').attr('class','xxxx');
-  document.addEventListener('mouseup',function(){
-    //document.selection.createRange().text; //IE9以下使用
+  $('#idxx').attr('class','xxxx');
+  document.addEventListener('mouseup',function(event){
+    //document.selection.createRange().te xt; //IE9以下使用
 
-    //window.getSelection().toString(); //其他浏览器使用
-    alert(window.getSelection());
+//    window.getSelection().toString(); //其他浏览器使用
+    var x = event.target.value;
+    $('#idxx').text(x);
   })
 
 </script>

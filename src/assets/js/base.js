@@ -66,7 +66,7 @@ let baseFunc = {
         try{
           // Info = eval('('+Info+')');
           Info = JSON.parse(Info);
-        }catch(e){throw e;}
+        }catch(e){ alert(e) ;document.write(JSON.stringify(Info));}
       }
 
       if(transData){
@@ -78,7 +78,6 @@ let baseFunc = {
           }
         }
       }
-
       if(CB)CB(Info);
 
       // replaceData(Info,replace);
