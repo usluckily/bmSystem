@@ -16,11 +16,18 @@
 </script>
 <style scoped>
   .modalBg{background:#000;width:100%;height:100%;position:fixed;opacity:0.7;z-index:101}
-  .modalBg-transition{
-    transition:opacity 0.8s ease;
+  .modalBg-enter-active{
+    transition:opacity 0.4s ease;
     opacity:0.7;
   }
-  .modalBg-enter,.modalBg-leave{
+  .modalBg-enter{
     opacity:0;
+  }
+  .modalBg-leave-active{
+    transition:opacity 0.4s ease;
+    opacity: 0;
+  }
+  .modalBg-leave{
+    opacity:0.7;
   }
 </style>

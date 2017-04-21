@@ -440,29 +440,32 @@ h4{font-weight:normal;}
 .modal .modalFooter .modalBtn:first-child{border-right:1px solid #e2e2e2;}
 .modalBtnBgGray{background:#e2e2e2;}
 
-.modalBg-transition{
-    transition:opacity 0.8s ease;
-    opacity:0.7;
-}
-.modalBg-enter,.modalBg-leave{
-    opacity:0;
-}
+/**/
+/*.modalBg-transition{*/
+    /*transition:opacity 0.8s ease;*/
+    /*opacity:0.7;*/
+/*}*/
+/*.modalBg-enter,.modalBg-leave{*/
+    /*opacity:0;*/
+/*}*/
 
-.modalBox-transition{
-    transition:opacity 0.3s ease;
-    opacity:1;
-}
-.modalBox-enter,.modalBox-leave{
-    opacity:0;
-}
+/*.modalBox-transition{*/
+    /*transition:opacity 0.3s ease;*/
+    /*opacity:1;*/
+/*}*/
+/*.modalBox-enter,.modalBox-leave{*/
+    /*opacity:0;*/
+/*}*/
 
-.modal-transition{
-    transition:transform 0.5s ease;
-    transform: translateZ(100px);
-}
-.modal-enter,.modal-leave{
-    transform: translateZ(120px);
-}
+/*.modal-transition{*/
+    /*transition:transform 0.5s ease;*/
+    /*transform: translateZ(100px);*/
+/*}*/
+/*.modal-enter,.modal-leave{*/
+    /*transform: translateZ(120px);*/
+/*}*/
+/**/
+
 /*modal*/
 
 /*pageAni*/
