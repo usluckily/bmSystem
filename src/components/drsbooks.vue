@@ -32,10 +32,10 @@
         listData:{
           msg:'msg',
           list:[
-            {book_Name:'愿你慢慢长大',first_Author:'理想国度',type:'文学',introduce:'对于观看者，或许借由这些历久弥新的记忆返回，我们每个人...',image:require('../assets/img/banner.png'),hash:'/article/1',id:'1',ranking:'1',isCollect:0},
-            {book_Name:'你的坚持，终将美好',first_Author:'阿笨',type:'设计',introduce:'对于观看者，或许借由这些历久弥新的记忆返回，我们每个人...',image:require('../assets/img/banner.png'),hash:'/article/2',id:'2',ranking:'2',isCollect:1},
-            {book_Name:'孙小渡',first_Author:'阿笨',type:'人文科学',introduce:'对于观看者，或许借由这些历久弥新的记忆返回，我们每个人...',image:require('../assets/img/banner.png'),hash:'/article/3',id:'3',ranking:'3',isCollect:1},
-            {book_Name:'孙小渡',first_Author:'阿笨',type:'人文科学',introduce:'对于观看者，或许借由这些历久弥新的记忆返回，我们每个人...',image:require('../assets/img/banner.png'),hash:'/article/4',id:'4',ranking:'4',isCollect:1}
+//            {book_Name:'愿你慢慢长大',first_Author:'理想国度',type:'文学',introduce:'对于观看者，或许借由这些历久弥新的记忆返回，我们每个人...',image:require('../assets/img/banner.png'),hash:'/article/1',id:'1',ranking:'1',isCollect:0},
+//            {book_Name:'你的坚持，终将美好',first_Author:'阿笨',type:'设计',introduce:'对于观看者，或许借由这些历久弥新的记忆返回，我们每个人...',image:require('../assets/img/banner.png'),hash:'/article/2',id:'2',ranking:'2',isCollect:1},
+//            {book_Name:'孙小渡',first_Author:'阿笨',type:'人文科学',introduce:'对于观看者，或许借由这些历久弥新的记忆返回，我们每个人...',image:require('../assets/img/banner.png'),hash:'/article/3',id:'3',ranking:'3',isCollect:1},
+//            {book_Name:'孙小渡',first_Author:'阿笨',type:'人文科学',introduce:'对于观看者，或许借由这些历久弥新的记忆返回，我们每个人...',image:require('../assets/img/banner.png'),hash:'/article/4',id:'4',ranking:'4',isCollect:1}
           ]
         },
         state:{

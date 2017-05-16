@@ -2,7 +2,7 @@
   <div class="card_box">
 
     <div v-show="data.list.length < 1" class="prompt">
-      <p>暂时没有数据</p>
+      <p>{{ prompt.msg }}</p>
     </div>
     <!--无数据时的提示-->
 
@@ -21,7 +21,7 @@
           <img src="../../assets/img/1.png"/>
         </div>
         <div class="info_box">
-          <h4> <p> {{ i.book_Name }} </p> <span v-if="state.type=='D'" @click="modalShow(i,'确认将此书加入书架？','0',$event)">加入书架</span></h4>
+          <h4> <p> {{ i.book_Name }}</p> <span v-if="state.type=='D'" @click="modalShow(i,'确认将此书加入书架？','0',$event)">加入书架</span></h4>
           <p>{{ i.book_Kind_Name }} / {{ i.first_Author }} 著</p>
           <div>
             {{ i.introduce }}
@@ -52,7 +52,10 @@
       return {
         state:this.listState || false,
         data: this.listData || {list:[]},
-        rankIconShow:this.rankIcon || false
+        rankIconShow:this.rankIcon || false,
+        prompt:{
+          msg:'加载中...'
+        }
       }
     },
     methods:{
@@ -68,15 +71,18 @@
         this.parentModal.show = true;
         this.parentModal.content = text;
         this.parentModal.state = state;
-        console.log('iiiii');
-        console.log(JSON.stringify(this.parentModal.bookObj));
       },
       test () {
-
       }
     },
     created () {
 
+    },
+    beforeUpdate(){
+      let _this = this
+      if(_this.data.list.length < 1){
+        _this.prompt.msg = '暂时没有数据'
+      }
     },
     components:{
 

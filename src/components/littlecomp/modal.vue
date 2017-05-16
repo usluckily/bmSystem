@@ -30,10 +30,10 @@
     methods:{
       modalFunc:function(){
         var modal = this.modal;
-        $('.modalBox .modalBtn').on('touchstart mouseover',function(){
+        $('.modalBox .modalBtn').on('touchstart',function(){
           $(this).addClass('modalBtnBgGray');
         });
-        $('.modalBox .modalBtn').on('touchend mouseout',function(){
+        $('.modalBox .modalBtn').on('touchend',function(){
           $(this).removeClass('modalBtnBgGray');
         });
         return {

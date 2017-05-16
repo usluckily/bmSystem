@@ -1,5 +1,7 @@
 /**
  * Created by Administrator on 2017/4/14.
  */
-let obj ={ list:[] }
-console.log(obj.list == '')
+var x = new Array();
+var y = x;
+var z = false
+console.log(z.constructor == Boolean);

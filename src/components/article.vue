@@ -27,6 +27,8 @@
   import ctrbar from '@/components/littlecomp/bookctrbar'
   import ghostBg from '@/components/littlecomp/ghostbg'
   import modal from '@/components/littlecomp/modal'
+  import IF from '@/assets/js/interface'
+  import {BS} from '@/assets/js/base'
 
   export default{
     name:'article',
@@ -50,12 +52,28 @@
         likes:'123',
         modal:{
           show:false,
+          that:this,
           content:'',
-          bookId:'11',
+          bookId:'',
           ctrState:'0',
+          bookObj:'',
           callback () {
-            alert('操作'+this.bookId);
-            this.show = false
+            let i = this.bookObj;
+            let _this = this , that = _this.that , BP = that.$store.state.BP;
+            let book_Id = that.$route.params.id;
+            console.log(book_Id);
+
+            BS.getData(IF.addFavorite,'GET',{userId:BP.userId,book_Id:book_Id },true,null,function(d){
+              switch(d.status){
+                case 404:
+                  alert('404');
+                  break;
+              }
+              _this.content = d.error;
+              setTimeout(function(){
+                _this.show = false
+              },1000);
+            });
           }
         }
       }

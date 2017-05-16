@@ -24,15 +24,16 @@ if(window.GreenSchool){
   })
 }else{
   //轮询检测ios端参数是否传到
-  setInterval(function(){
+  let SI = setInterval(function(){
+    basicParams.jjUserId = window.iosParams.userId;
     if(window.iosParams.userId != ''){
-      basicParams.jjUserId = window.iosParams.userId;
 
       BS.getData(IF.getUserBasic,'GET',{jjUserId:basicParams.jjUserId},false,null,function(d){
         for(var i in d.data){
           basicParams[i] = d.data[i]
         }
       })
+      clearInterval(SI)
     }
   },50)
 

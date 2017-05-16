@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <script type="text/javascript" src="../../assets/js/vue2.js"></script>
+  <script type="text/javascript" src="../../assets/js/jquery.js"></script>
+    <title>Title</title>
+</head>
+<body >
+  <p id="app"> {{ obj.data[0] }} {{ obj.data[0].classNum }}</p>
+</body>
+<script>
+  var obj = {data:''} , arr = {"Version":"1.0","Charset":"UTF-8","saltkey":"792501","total":"","ipage":"","error":"success","data":[{"classNum":"1","gradeNum":"1","schoolNum":"1"}]};
+  var vm = new Vue({
+    el:'#app',
+    data:{
+      obj:obj
+    }
+  })
+
+  $.ajax({
+    url:'http://139.219.184.67/school/integralManagementOrder.do?method=getIntegralStudentOrderV31',
+    data:{studentid:49105,sid:132,gradeid:1,classid:1066,userid:845189549},
+    dataType : "jsonp",
+    success:function(d){
+      obj.data = d.data
+    },
+    error:function(e){
+      console.log("err:"+e)
+    }
+  })
+
+//  setTimeout(function(){
+//    obj.data = arr.data;
+//  },2000)
+</script>
+</html>

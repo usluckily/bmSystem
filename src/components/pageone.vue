@@ -44,10 +44,7 @@
         listData:{
           msg:'msg',
           list:[
-            {title:'愿你慢慢长大',author:'理想国度',type:'文学',content:'对于观看者，或许借由这些历久弥新的记忆返回，我们每个人...',pic:require('../assets/img/banner.png'),hash:'/article/1',id:'1',ranking:'1',isCollect:0},
-            {title:'你的坚持，终将美好',author:'阿笨',type:'设计',content:'对于观看者，或许借由这些历久弥新的记忆返回，我们每个人...',pic:require('../assets/img/banner.png'),hash:'/article/2',id:'2',ranking:'2',isCollect:1},
-            {title:'孙小渡',author:'阿笨',type:'人文科学',content:'对于观看者，或许借由这些历久弥新的记忆返回，我们每个人...',pic:require('../assets/img/banner.png'),hash:'/article/3',id:'3',ranking:'3',isCollect:1},
-            {title:'孙小渡',author:'阿笨',type:'人文科学',content:'对于观看者，或许借由这些历久弥新的记忆返回，我们每个人...',pic:require('../assets/img/banner.png'),hash:'/article/4',id:'4',ranking:'4',isCollect:1}
+
           ]
         },
         state:{
@@ -85,6 +82,7 @@
     },
     created () {
       let _this = this , BP = _this.$store.state.BP;
+      _this.outlink.show = false//
 
       //get tab
       if(this.$store.state.tab.list == ''){
@@ -102,6 +100,13 @@
     mounted () {
       let _this = this
       //pageOne 需要处理下ios传参延迟的问题
+    },
+    watch:{
+      '$route' :function(to, from){
+        let type = this.$route.params.name;
+        console.log(type)
+        this.getData(type)
+      }
     }
   }
 </script>

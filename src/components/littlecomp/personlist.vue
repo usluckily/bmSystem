@@ -67,7 +67,7 @@
           </div>
           <div class="rb">
             <div>{{ i.likes }}</div>
-            <div><img :src="i.likes > 0 ? require('../../assets/img/yuedudaren_like2.png') : require('../../assets/img/yuedudaren_like1.png')" @click="likes($event,i,data.my)"/></div>
+            <div><img :src="i.likes > 0 ? require('../../assets/img/yuedudaren_like2.png') : require('../../assets/img/yuedudaren_like1.png')" @click="likes($event,i,data.my)" data-m="123"/></div>
           </div>
         </div>
       </li>
@@ -94,6 +94,7 @@
         this.$router.push({path:x});
       },
       likes (e,i,my) {
+//        console.log(e.currentTarget.getAttribute('data-m'));
         if(e)e.stopPropagation();
         let userId = i.id , myUserId = my.id;
         BS.getData(IF.userLikes,'POST',{userId:userId,myUserId:myUserId},true,null,function(d){

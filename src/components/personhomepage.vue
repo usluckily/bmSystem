@@ -49,9 +49,12 @@
 
         len = data.length;//重新计算data长度
 
-        for(let i in data){
-          xAixs.push(i);//设置x轴节点
+        for(let i=0;i<len;i++){
+          xAixs.push(data[i]);//设置x轴节点
         }
+
+
+
         let option = {
           tooltip: {
             trigger: 'axis',

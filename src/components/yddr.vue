@@ -55,12 +55,24 @@
             BS.getData(IF.getReadTalentFromSchool,'GET',{userId:BP.userId},true,null,function(d){
               _this.listData.my = d.data.my;
               _this.listData.list = d.data.list
+
+              _this.listData.my.ranking = parseInt(_this.listData.my.ranking)
+              for(var i in _this.listData.list){
+                _this.listData.list[i].ranking = parseInt(_this.listData.list[i].ranking)
+              }
+              //返回的ranking变成了1.0,2.0之类的，暂时先这么处理下
             });
             break;
           case 'class':
             BS.getData(IF.getReadTalentFromClass,'GET',{userId:BP.userId},true,null,function(d){
               _this.listData.my = d.data.my;
               _this.listData.list = d.data.list
+
+              _this.listData.my.ranking = parseInt(_this.listData.my.ranking)
+              for(var i in _this.listData.list){
+                _this.listData.list[i].ranking = parseInt(_this.listData.list[i].ranking)
+              }
+              //返回的ranking变成了1.0,2.0之类的，暂时先这么处理下
             });
             break;
           default:

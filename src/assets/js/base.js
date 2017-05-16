@@ -66,7 +66,12 @@ let baseFunc = {
         try{
           // Info = eval('('+Info+')');
           Info = JSON.parse(Info);
-        }catch(e){ alert(e) ;document.write(JSON.stringify(Info));}
+
+        }catch(e){
+          // alert('err:'+e);
+          throw e;
+          // alert(e) ;document.write(Info);
+        }
       }
 
       if(transData){

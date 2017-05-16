@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Title</title>
+  <style>
+    *{margin:0;padding:0;}
+  </style>
+</head>
+<body>
+
+</body>
+<script>
+   function rootFontSize(){
+    var base = 500;
+    var w = document.body.clientWidth;
+     alert(w);
+    if( w<=800 ){
+      var result = 20 + (w - base) / 30;
+      console.log(result);
+      result >= 10 ? $('html').css({'fontSize':result + 'px'}) : $('html').css({'fontSize':10 + 'px'});
+    }
+  }
+   rootFontSize()
+</script>
+</html>
