@@ -31,14 +31,9 @@
          ]
         },
         listData:{
-          my:{name:'李小红',headPic:require('../assets/img/person_head_icon.jpg'),grade:'三年级一班',borrowTimes:'23',likes:'0',ranking:6,id:'6'},
+          my:{},
           list:[
-            {name:'李小谚',headPic:require('../assets/img/person_head_icon.jpg'),grade:'三年级一班',borrowTimes:'98',likes:'50',ranking:1,id:'1'},
-            {name:'马小腾',headPic:require('../assets/img/person_head_icon.jpg'),grade:'三年级一班',borrowTimes:'97',likes:'40',ranking:2,id:'2'},
-            {name:'刘小青',headPic:require('../assets/img/person_head_icon.jpg'),grade:'三年级一班',borrowTimes:'96',likes:'30',ranking:3,id:'3'},
-            {name:'马小云',headPic:require('../assets/img/person_head_icon.jpg'),grade:'三年级一班',borrowTimes:'95',likes:'20',ranking:4,id:'4'},
-            {name:'雷小军',headPic:require('../assets/img/person_head_icon.jpg'),grade:'三年级一班',borrowTimes:'94',likes:'10',ranking:5,id:'5'},
-            {name:'李小红',headPic:require('../assets/img/person_head_icon.jpg'),grade:'三年级一班',borrowTimes:'23',likes:'0',ranking:6,id:'6'},
+
           ]
         }
       }

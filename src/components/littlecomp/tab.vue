@@ -38,8 +38,8 @@
     },
     computed:{
       filteredcut () {
-        this.cut = this.$route.path == '/page/1';
-        return this.$route.path == '/page/1'
+        this.cut = this.$route.path == '/page/1/library';
+        return this.$route.path == '/page/1/library'
       },
       filteredlist () {
         return (this.cut ?　this.tab.list.slice(0,7) : this.tab.list);

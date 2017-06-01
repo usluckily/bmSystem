@@ -82,9 +82,8 @@
     },
     watch:{
       '$route' :function(to, from){
-        JSON.strign
         switch(to.path){
-          case '/page/1':
+          case '/page/1/library':
             this.page.pageOne = true;
             this.page.pageTwo = this.page.pageThree = false;
             break;
@@ -106,7 +105,11 @@
       let hash = location.hash;
       hash = hash.split('#')[1];
       switch(hash){
-        case '/page/1':
+        case '/page/1/ebook/':
+          this.page.pageOne = true;
+          this.page.pageTwo = this.page.pageThree = false;
+          break;
+        case '/page/1/library/':
           this.page.pageOne = true;
           this.page.pageTwo = this.page.pageThree = false;
           break;

@@ -1,21 +1,149 @@
-{"Version":"1.0","Charset":"UTF-8","auth":"sesson_temp","saltkey":"saltkey_temp","sid":"sid_temp","userid"
-:"userid_temp","total":"total_temp","ipage":"ipage_temp","error":"error_temp","data":[ { "id":" 1 ",
-  "book_Kind_Code":" A ", "book_Kind_Name":" 马克思主义、列宁主义、毛泽东思想、邓小平理论 " , "image":" sdag " },{ "id":" 2
-  ", "book_Kind_Code":" B ", "book_Kind_Name":" 哲学、宗教 " , "image":" sag " },{ "id":" 3 ", "book_Kind_Code"
-  :" C ", "book_Kind_Name":" 社会科学总论 " , "image":" gsa " },{ "id":" 4 ", "book_Kind_Code":" D ", "book_Kind_Name"
-:" 政治、法律 " , "image":" gas " },{ "id":" 5 ", "book_Kind_Code":" E ", "book_Kind_Name":" 军事 " , "image"
-:" asdg " },{ "id":" 6 ", "book_Kind_Code":" F ", "book_Kind_Name":" 经济 " , "image":" sa " },{ "id":"
-  7 ", "book_Kind_Code":" G ", "book_Kind_Name":" 文化、科学、教育、体育 " , "image":" agdasdg " },{ "id":" 8 ",
-  "book_Kind_Code":" H ", "book_Kind_Name":" 语言、文字 " , "image":" asdga " },{ "id":" 9 ", "book_Kind_Code"
-:" I ", "book_Kind_Name":" 文学 " , "image":" g " },{ "id":" 10 ", "book_Kind_Code":" J ", "book_Kind_Name"
-:" 艺术 " , "image":" gda " },{ "id":" 11 ", "book_Kind_Code":" K ", "book_Kind_Name":" 历史、地理 " , "image"
-:" ga " },{ "id":" 12 ", "book_Kind_Code":" N ", "book_Kind_Name":" 自然科学总论 " , "image":" a " },{ "id"
-:" 13 ", "book_Kind_Code":" O ", "book_Kind_Name":" 数理科学和化学 " , "image":" as " },{ "id":" 14 ", "book_Kind_Code"
-:" P ", "book_Kind_Name":" 天文学,地球科学 " , "image":" asdgs " },{ "id":" 15 ", "book_Kind_Code":" Q ", "book_Kind_Name"
-:" 生物科学 " , "image":" dgag " },{ "id":" 16 ", "book_Kind_Code":" R ", "book_Kind_Name":" 医药,卫生 " , "image"
-:" sdgas " },{ "id":" 17 ", "book_Kind_Code":" S ", "book_Kind_Name":" 农业科学 " , "image":" gg " },{ "id"
-:" 18 ", "book_Kind_Code":" T ", "book_Kind_Name":" 工业技术 " , "image":" sd " },{ "id":" 19 ", "book_Kind_Code"
-:" U ", "book_Kind_Name":" 交通运输 " , "image":" sa " },{ "id":" 20 ", "book_Kind_Code":" V ", "book_Kind_Name"
-:" 航空航天 " , "image":" agasd " },{ "id":" 21 ", "book_Kind_Code":" X ", "book_Kind_Name":" 环境科学,安全科学 "
-, "image":" asdg " },{ "id":" 22 ", "book_Kind_Code":" Z ", "book_Kind_Name":" 综合性图书 " , "image":" agda
-  " }]}
+{
+  "data": {
+    "header": "http:\/\/120.76.144.50\/video\/BookFile\/GameApk\/JiaoYuShiPin\/mingshiketang\/video\/renshibaitianheheiye2.mp4",
+    "center": [
+      {
+        "id": "2",
+        "name": "\u56fd\u5b66\u542f\u8499",
+        "image": "120.76.144.50\/image\/themes\/img\/pd\/1.png"
+      },
+      {
+        "id": "3",
+        "name": "\u8bed\u8a00\u57f9\u517b",
+        "image": "120.76.144.50\/image\/themes\/img\/pd\/6.png"
+      },
+      {
+        "id": "4",
+        "name": "\u6570\u5b66\u6f5c\u80fd",
+        "image": "120.76.144.50\/image\/themes\/img\/pd\/7.png"
+      },
+      {
+        "id": "5",
+        "name": "\u667a\u529b\u5f00\u53d1",
+        "image": "120.76.144.50\/image\/themes\/img\/pd\/8.png"
+      },
+      {
+        "id": "6",
+        "name": "\u7ae5\u8bdd\u6545\u4e8b",
+        "image": "120.76.144.50\/image\/themes\/img\/pd\/2.png"
+      },
+      {
+        "id": "7",
+        "name": "\u5b89\u5168\u6559\u80b2",
+        "image": "120.76.144.50\/image\/themes\/img\/pd\/10.png"
+      },
+      {
+        "id": "8",
+        "name": "\u81ea\u6551\u6559\u80b2",
+        "image": "120.76.144.50\/image\/themes\/img\/pd\/11.png"
+      },
+      {
+        "id": "9",
+        "name": "\u793c\u4eea\u6559\u80b2",
+        "image": "120.76.144.50\/image\/themes\/img\/pd\/12.png"
+      },
+      {
+        "id": "10",
+        "name": "\u52a8\u7269\u7ae5\u8bdd",
+        "image": "120.76.144.50\/image\/themes\/img\/pd\/3.png"
+      },
+      {
+        "id": "11",
+        "name": "\u6050\u9f99\u7ae5\u8bdd",
+        "image": "120.76.144.50\/image\/themes\/img\/pd\/4.png"
+      },
+      {
+        "id": "12",
+        "name": "\u884c\u4e3a\u7ed8\u672c",
+        "image": "120.76.144.50\/image\/themes\/img\/pd\/5.png"
+      },
+      {
+        "id": "13",
+        "name": "\u75af\u72c2\u5341\u4e07",
+        "image": "120.76.144.50\/image\/themes\/img\/pd\/9.png"
+      }
+    ],
+    "footer": [
+      {
+        "category": {
+          "id": "107",
+          "name": "\u8bed\u8a00\u542f\u8499",
+          "image": ""
+        },
+        "video": []
+      },
+      {
+        "category": {
+          "id": "108",
+          "name": "\u82f1\u8bed\u542f\u8499",
+          "image": ""
+        },
+        "video": []
+      },
+      {
+        "category": {
+          "id": "109",
+          "name": "\u6570\u5b66\u542f\u8499",
+          "image": ""
+        },
+        "video": []
+      },
+      {
+        "category": {
+          "id": "110",
+          "name": "\u624b\u5de5\u542f\u8499",
+          "image": ""
+        },
+        "video": []
+      },
+      {
+        "category": {
+          "id": "111",
+          "name": "\u8bc6\u5b57\u4e0e\u9605\u8bfb",
+          "image": ""
+        },
+        "video": []
+      },
+      {
+        "category": {
+          "id": "112",
+          "name": "\u5168\u8111\u601d\u7ef4",
+          "image": ""
+        },
+        "video": []
+      },
+      {
+        "category": {
+          "id": "113",
+          "name": "\u62fc\u97f3\u542f\u8499",
+          "image": ""
+        },
+        "video": []
+      },
+      {
+        "category": {
+          "id": "114",
+          "name": "\u8499\u7eb8\u5b66\u753b",
+          "image": ""
+        },
+        "video": []
+      },
+      {
+        "category": {
+          "id": "115",
+          "name": "\u56fd\u5b66\u542f\u8499",
+          "image": ""
+        },
+        "video": []
+      },
+      {
+        "category": {
+          "id": "116",
+          "name": "\u81ea\u5236\u8282\u76ee",
+          "image": ""
+        },
+        "video": []
+      }
+    ]
+  }
+}

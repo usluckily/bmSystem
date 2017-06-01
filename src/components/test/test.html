@@ -2,26 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>Title</title>
-  <style>
-    *{margin:0;padding:0;}
-  </style>
+    <title></title>
+  <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
 </head>
 <body>
-
+<p id="show">click</p>
+<dl style="display:none;" id="dl">
+  <dt>计算机</dt>
+  <dd>用来计算的仪器 ... ...</dd>
+  <dt>显示器</dt>
+  <dd>以视觉方式显示信息的装置 ... ...</dd>
+</dl>
 </body>
 <script>
-   function rootFontSize(){
-    var base = 500;
-    var w = document.body.clientWidth;
-     alert(w);
-    if( w<=800 ){
-      var result = 20 + (w - base) / 30;
-      console.log(result);
-      result >= 10 ? $('html').css({'fontSize':result + 'px'}) : $('html').css({'fontSize':10 + 'px'});
-    }
-  }
-   rootFontSize()
+  $('#show').click(function(){
+    $('#dl').css({'display':'block'})
+  })
 </script>
 </html>

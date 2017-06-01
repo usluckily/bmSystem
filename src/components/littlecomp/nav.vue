@@ -33,17 +33,27 @@
         })
       },
       setHash (x) {
-        this.$router.replace({path:x});
+        if(x == '/outlinks/'){
+          this.$router.push({path:x});
+        }else{
+          this.$router.replace({path:x});
+        }
+
       }
     },
     created () {
-
+      //delete before
+      if(this.$route.path.indexOf('ebook') != -1){
+        this.cur = 1;
+      }
+      //
     },
     beforeMount () {
       this.slider();
     },
     watch:{
       '$route':function(to,from) {
+        console.log(this.$route);
         this.cur = this.$route.query.cur || 0;
       }
     }

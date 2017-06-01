@@ -8,8 +8,6 @@ import pagetwo from '@/components/pagetwo'
 import pagethree from '@/components/pagethree'
 import yddr from '@/components/yddr'
 import booklist from '@/components/littlecomp/booklist'
-import cardone from '@/components/littlecomp/cardone'
-import cardtwo from '@/components/littlecomp/cardtwo'
 import statistics from '@/components/statistics'
 import myborrow from '@/components/myborrow'
 import borrowdetails from '@/components/borrowdetails'
@@ -20,6 +18,12 @@ import personhomepage from '@/components/personhomepage'
 import favorite from '@/components/favorite'
 import tabpage from '@/components/tabpage'
 import personinfo from '@/components/personinfo'
+import library from '@/components/pageone/library'
+import ebook from '@/components/ebook'
+import video from '@/components/ebook/video'
+import outlinks from '@/components/test/outlinks'
+
+import r_ebook from './ebook/'
 
 Vue.use(Router)
 
@@ -34,18 +38,26 @@ export default new Router({
       children:[
         {
           path:'/page/1',
-          // redirect:'/page/1/1',
+          redirect:'/page/1/library',
           component:pageone,
-          // children:[
-          //   {
-          //     path:'/page/1/1',
-          //     component:cardone
-          //   },
-          //   {
-          //     path:'/page/1/2',
-          //     component:cardtwo
-          //   }
-          // ]
+          children:[
+            {
+              path:'library',
+              component:library
+            },
+            {
+              path:'ebook',
+              component:ebook,
+            },
+            {
+              path:'ebook/:id',
+              component:video,
+            },
+            {
+              path:'outlinks',
+              component:outlinks
+            }
+          ]
         },
         {
           path:'/page/2',
@@ -54,11 +66,6 @@ export default new Router({
         {
           path:'/page/3',
           component:pagethree
-        },
-        {
-          path:'/outlinks/',
-          name:'outlinks',
-          component:pageone
         }
       ]
     },
@@ -136,7 +143,13 @@ export default new Router({
       path:'/personinfo/',
       name:'personinfo',
       component:personinfo
-    }
+    },
+    {
+      path:'/ebook/',
+      name:'ebook',
+      component:ebook
+    },
+    ...r_ebook
   ]
 })
 
