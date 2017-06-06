@@ -7,7 +7,7 @@ module.exports = {
     index: path.resolve(__dirname, '../dist/index.html'),
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'static',
-    assetsPublicPath: './',//build项目的时候这个路径要修改为 './'才能正确引入外部文件，但在启动项目的时候 './'这个路径就get不到文件，要改回 '/',可能是打包为静态文件后与开启服务器状态下路径寻址不一样了
+    assetsPublicPath: './',
     productionSourceMap: true,
     // Gzip off by default as many popular static hosts such as
     // Surge or Netlify already gzip all static assets for you.

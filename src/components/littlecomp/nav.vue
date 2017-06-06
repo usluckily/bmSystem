@@ -43,7 +43,8 @@
     },
     created () {
       //delete before
-      if(this.$route.path.indexOf('ebook') != -1){
+      let $r = this.$route
+      if($r.path.indexOf('ebook') != -1 || $r.path.indexOf('video') != -1){
         this.cur = 1;
       }
       //

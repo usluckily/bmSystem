@@ -39,7 +39,7 @@
         nav:{
           list:[
             {title:'图书馆',hash:'/page/1/library'},
-            {title:'电子图书',hash:'/page/1/ebook'}
+            {title:'电子图书',hash:'/ebook'}///page/1/ebook
           ]
         },
       }

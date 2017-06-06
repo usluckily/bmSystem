@@ -5,7 +5,7 @@ const fs = require('fs');
 const path = require('path');
 const mineType = require('mime-types');
 
-let filePath = path.resolve('./1.png');
+let filePath = path.resolve('./0-11.gif');
 
 let data = fs.readFileSync(filePath);
 

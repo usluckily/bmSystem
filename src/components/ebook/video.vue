@@ -1,22 +1,56 @@
 <template>
-  <div style="margin-bottom:3.5rem;">
+  <div style="margin-bottom:3.5rem;" class="all">
+    <my_nav :parentData="nav" ></my_nav>
+
     <div class="full-video-box">
-      <video :src="data.header" controls ></video>
+      <video :src="data.header" controls v-cloak></video>
     </div>
 
     <div class="normal-list">
-      <router-link :to=" '/secondVideoCategory'+i.id " v-for="i in data.center" tag="div">
-        <img :src="'http://'+i.image"/>
+
+      <h4 class="module-tit">视频分类</h4>
+
+      <router-link :to=" '/videoCategory/'+i.id " v-for="i in data.center" tag="div" :key="i.id" v-cloak>
+        <img :src="host+i.image"/>
        <p>{{ i.name }}</p>
       </router-link>
     </div>
 
-    <div></div>
+    <div class="category-list">
 
-    <eb_tab></eb_tab>
+      <h4 class="module-tit">教育资源</h4>
+
+      <div class="items">
+        <p class="items-tit">啊实打实大<span>更多></span> </p>
+        <div class="lists-list">
+          <div>
+            <img src="http://www.xiaobenxiong.net/BookFile/GameApk/NewVideo/pic/teluoyiyizhiyounaxielingrenzhenjingdefaxian.jpg"/>
+            <p>方法是</p>
+          </div>
+
+          <div>
+            <img src="http://www.xiaobenxiong.net/BookFile/GameApk/NewVideo/pic/teluoyiyizhiyounaxielingrenzhenjingdefaxian.jpg"/>
+            <p>方法是</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="items" v-for="i in data.footer">
+        <p class="items-tit">{{ i.category.name }} <span>更多></span> </p>
+        <div class="lists-list">
+          <div v-for="j in i.video">
+            <img :src="host+j.vediocover"/>
+            <p>{{ j.vedioname }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <eb_tab :ebooktab="ebooktab"></eb_tab>
   </div>
 </template>
 <script>
+  import nav from '@/components/littlecomp/nav'
   import ebtab from '@/components/ebook/ebooktab'
   import jsonp from '@/assets/js/jsonp'
   import IF from '@/assets/js/interface'
@@ -29,7 +63,25 @@
             header:'',
             center:[],
             footer:[]
-          }
+          },
+          host:'http://120.76.144.50',
+          nav:{
+            list:[
+              {title:'图书馆',hash:'/page/1/library'},
+              {title:'电子图书',hash:'/ebook',cur:true}///page/1/ebook
+            ]
+          },
+          ebooktab:[
+            {
+              to:'/ebook',
+              tit:'图书'
+            },
+            {
+              to:'/video',
+              tit:'视频',
+              cur:true
+            }
+          ]
         }
       },
       created(){
@@ -41,15 +93,11 @@
         })
       },
       components:{
-        eb_tab:ebtab
+        eb_tab:ebtab,
+        my_nav:nav
       }
     })
 </script>
 <style>
-  .full-video-bo{width:100%;}
-  .full-video-box>video{width:100%;}
-  .normal-list{width:100%;display:flex;flex-wrap:wrap}
-  .normal-list>div{width:25%;text-align:center;}
-  .normal-list>div>img{width:95%}
-  .normal-list>div>p{width:100%;font-size:0.8rem;line-height:1.5rem;}
+
 </style>
