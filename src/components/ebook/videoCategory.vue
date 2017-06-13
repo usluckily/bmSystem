@@ -1,20 +1,17 @@
 <template>
   <div class="all">
     <div class="category-list">
-      <div class="items">
-        <p class="items-tit">啊实打实大<span>更多></span> </p>
-        <div class="lists-list">
-          <div>
-            <img src="http://www.xiaobenxiong.net/BookFile/GameApk/NewVideo/pic/teluoyiyizhiyounaxielingrenzhenjingdefaxian.jpg"/>
-            <p>方法是</p>
-          </div>
 
-          <div>
-            <img src="http://www.xiaobenxiong.net/BookFile/GameApk/NewVideo/pic/teluoyiyizhiyounaxielingrenzhenjingdefaxian.jpg"/>
-            <p>方法是</p>
+      <div class="items" v-for="i in listData.list">
+        <p class="items-tit large" style="padding-bottom:0.5rem;border-bottom: 1px solid #ccc">{{ i.category.name }}<router-link tag="span" :to=" '/videolist/'+i.category.id+'?name='+i.category.name ">更多></router-link> </p>
+        <div class="lists-list">
+          <div v-for="j in i.video"  @click="jump(j)">
+            <img :src="host + j.vediocover"/>
+            <p>{{ j.vedioname }}</p>
           </div>
         </div>
       </div>
+
 
       <!--<div class="items" v-for="i in data.footer">-->
         <!--<p class="items-tit">{{ i.category.name }} <span>更多></span> </p>-->
@@ -36,19 +33,26 @@
       name: 'videoCategory',
       data(){
         return {
-          data:{
-
+          listData:{
+            list:[]
           },
           host:'http://120.76.144.50',
         }
       },
+      methods:{
+        jump(x){
+          this.$router.push({name:'videoplay',params:{id:x}})
+        }
+      },
       created(){
-        jsonp.get(IF.getVideoCategory,this.$route.params.id,function(d){
-
+        let vm = this
+        jsonp.get(IF.getVideoCategory,{cid:this.$route.params.id},function(d){
+          vm.listData.list = d.data
         })
       }
     })
 </script>
-<style>
-
+<style scoped>
+  .items{border-bottom:1px solid #e3e3e3}
+  .category-list{background:#fff;}
 </style>

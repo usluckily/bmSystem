@@ -1,149 +1,21 @@
 {
-  "data": {
-    "header": "http:\/\/120.76.144.50\/video\/BookFile\/GameApk\/JiaoYuShiPin\/mingshiketang\/video\/renshibaitianheheiye2.mp4",
-    "center": [
-      {
-        "id": "2",
-        "name": "\u56fd\u5b66\u542f\u8499",
-        "image": "120.76.144.50\/image\/themes\/img\/pd\/1.png"
-      },
-      {
-        "id": "3",
-        "name": "\u8bed\u8a00\u57f9\u517b",
-        "image": "120.76.144.50\/image\/themes\/img\/pd\/6.png"
-      },
-      {
-        "id": "4",
-        "name": "\u6570\u5b66\u6f5c\u80fd",
-        "image": "120.76.144.50\/image\/themes\/img\/pd\/7.png"
-      },
-      {
-        "id": "5",
-        "name": "\u667a\u529b\u5f00\u53d1",
-        "image": "120.76.144.50\/image\/themes\/img\/pd\/8.png"
-      },
-      {
-        "id": "6",
-        "name": "\u7ae5\u8bdd\u6545\u4e8b",
-        "image": "120.76.144.50\/image\/themes\/img\/pd\/2.png"
-      },
-      {
-        "id": "7",
-        "name": "\u5b89\u5168\u6559\u80b2",
-        "image": "120.76.144.50\/image\/themes\/img\/pd\/10.png"
-      },
-      {
-        "id": "8",
-        "name": "\u81ea\u6551\u6559\u80b2",
-        "image": "120.76.144.50\/image\/themes\/img\/pd\/11.png"
-      },
-      {
-        "id": "9",
-        "name": "\u793c\u4eea\u6559\u80b2",
-        "image": "120.76.144.50\/image\/themes\/img\/pd\/12.png"
-      },
-      {
-        "id": "10",
-        "name": "\u52a8\u7269\u7ae5\u8bdd",
-        "image": "120.76.144.50\/image\/themes\/img\/pd\/3.png"
-      },
-      {
-        "id": "11",
-        "name": "\u6050\u9f99\u7ae5\u8bdd",
-        "image": "120.76.144.50\/image\/themes\/img\/pd\/4.png"
-      },
-      {
-        "id": "12",
-        "name": "\u884c\u4e3a\u7ed8\u672c",
-        "image": "120.76.144.50\/image\/themes\/img\/pd\/5.png"
-      },
-      {
-        "id": "13",
-        "name": "\u75af\u72c2\u5341\u4e07",
-        "image": "120.76.144.50\/image\/themes\/img\/pd\/9.png"
-      }
-    ],
-    "footer": [
-      {
-        "category": {
-          "id": "107",
-          "name": "\u8bed\u8a00\u542f\u8499",
-          "image": ""
-        },
-        "video": []
-      },
-      {
-        "category": {
-          "id": "108",
-          "name": "\u82f1\u8bed\u542f\u8499",
-          "image": ""
-        },
-        "video": []
-      },
-      {
-        "category": {
-          "id": "109",
-          "name": "\u6570\u5b66\u542f\u8499",
-          "image": ""
-        },
-        "video": []
-      },
-      {
-        "category": {
-          "id": "110",
-          "name": "\u624b\u5de5\u542f\u8499",
-          "image": ""
-        },
-        "video": []
-      },
-      {
-        "category": {
-          "id": "111",
-          "name": "\u8bc6\u5b57\u4e0e\u9605\u8bfb",
-          "image": ""
-        },
-        "video": []
-      },
-      {
-        "category": {
-          "id": "112",
-          "name": "\u5168\u8111\u601d\u7ef4",
-          "image": ""
-        },
-        "video": []
-      },
-      {
-        "category": {
-          "id": "113",
-          "name": "\u62fc\u97f3\u542f\u8499",
-          "image": ""
-        },
-        "video": []
-      },
-      {
-        "category": {
-          "id": "114",
-          "name": "\u8499\u7eb8\u5b66\u753b",
-          "image": ""
-        },
-        "video": []
-      },
-      {
-        "category": {
-          "id": "115",
-          "name": "\u56fd\u5b66\u542f\u8499",
-          "image": ""
-        },
-        "video": []
-      },
-      {
-        "category": {
-          "id": "116",
-          "name": "\u81ea\u5236\u8282\u76ee",
-          "image": ""
-        },
-        "video": []
-      }
-    ]
-  }
+  "category": {
+    "id": "14",
+    "name": "\u4e09\u5b57\u7ecf",
+    "image": ""
+  },
+  "video": [
+    {
+      "id": "376",
+      "vedioname": "\u66f9\u64cd\u5728\u5c11\u5e74\u65f6\u671f\u7684\u8f6c\u53d8",
+      "vediocover": "\/BookFile\/GameApk\/NewVideo\/pic\/caocaozaishaonianshiqidezhuanbian.jpg",
+      "vediourl": "\/BookFile\/GameApk\/NewVideo\/video\/caocaozaishaonianshiqidezhuanbian.mp4"
+    },
+    {
+      "id": "377",
+      "vedioname": "\u5510\u5bc5\u5b66\u753b",
+      "vediocover": "\/BookFile\/GameApk\/NewVideo\/pic\/tangyinxuehua.jpg",
+      "vediourl": "\/BookFile\/GameApk\/NewVideo\/video\/tangyinxuehua.mp4"
+    }
+  ]
 }

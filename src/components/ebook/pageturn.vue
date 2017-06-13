@@ -7,7 +7,7 @@
 
     <div id="magazine" class="flipbook">
       <div  v-for="i in list" class="page"><!--:style="{background:'url('+i.pic+') no-repeat',backgroundSize:'100%'}"-->
-        <img :src="i.pic" class="pageimg"/>
+        <img :src="host+i.image" class="pageimg"/>
       </div>
     </div>
   </div>
@@ -36,36 +36,50 @@
         loading:{
           start:false,
           end:false
-        }
+        },
+        host:'http://120.76.144.50',
       }
     },
     methods:{
-
+      setPageTurn(vm){
+        $('#magazine').turn({
+          width: vm.w,
+          height: vm.h,
+          elevation: 50,
+          display: 'single',
+          // Enable gradients
+          gradients: true,
+          // Auto center this flipbook
+          autoCenter: true
+        });
+      }
     },
     created(){
       let vm =this
       vm.loading.start = true
-      jsonp.get(IF.getEbook,vm.$route.params.id,function(d){
-        console.log(d);
+      jsonp.get(IF.getEbook,{bid:vm.$route.query.id},function(d){
+        vm.list = d.data
+
+        vm.$nextTick(function(){
+          setTimeout(function(){
+            vm.setPageTurn(vm);
+          },100)
+        })
+
+
+
         setTimeout(function(){
           vm.loading.end = true
           setTimeout(function(){
             vm.show = false
+
           },1000)
         },100)
+
       })
     },
     mounted(){
-      $('#magazine').turn({
-        width: this.w,
-        height: this.h,
-        elevation: 50,
-        display: 'single',
-        // Enable gradients
-        gradients: true,
-        // Auto center this flipbook
-        autoCenter: true
-      });
+
     },
     components:{
       l_bar:loadingbar

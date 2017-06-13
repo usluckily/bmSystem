@@ -169,7 +169,11 @@ h4{font-weight:normal;}
 .items-tit> span{float:right;}
 .lists-list>div>img,.lists-list>div>p{width:95%;}
 .lists-list>div>img{display:block;border-radius:0.5rem;height:6rem;}
-.lists-list>div>p{font-size:0.8rem;}
+.lists-list>div>p{font-size:0.8rem;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+
+.items .large{font-size:1rem;}
+
+.flex-box{display:flex;flex-wrap:wrap;align-items:center;width:100%;height:100%;}
 
 
 /**loader**/

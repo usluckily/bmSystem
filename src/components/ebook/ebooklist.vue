@@ -1,6 +1,6 @@
 <template>
-  <div class="all">
-    <div class="classify" v-if="classify.show">
+  <div class="all" :style="classify.show ? styleObj : '' ">
+    <div class="classify" v-show="classify.show">
       <ul>
         <li v-for="i in classify.list" @click="search(i.id)">{{ i.name }}</li>
       </ul>
@@ -11,7 +11,7 @@
       <div :class="classify.show ? 'cur' : ''">分类</div>
     </div>
 
-    <div class="ebook_list">
+    <div class="ebook_list" >
       <ul>
         <li v-for="i in listData.list">
           <div class="box" @click="jump(i.id)">
@@ -44,7 +44,11 @@
         },
         loadingStatus:0,
         host:'http://120.76.144.50',
-        getListCid:''
+        getListCid:'',
+        pageEnd:false,
+        styleObj:{
+          overflow:'hidden'
+        }
       }
     },
     created(){
@@ -60,6 +64,9 @@
 
         jsonp.get(IF.getEbookList,{cid:vm.getListCid},function(d){
           vm.listData.list = d.data
+
+          d.data.length < 20 ? vm.pageEnd = false : vm.pageEnd = true
+
         })
 
       })
@@ -68,12 +75,18 @@
     mounted(){
       let vm = this
       sl.init('.all',['.tab','.ebook_list'],function(){
-        jsonp.get(IF.getEbookList,{cid:vm.getListCid,offset:20,limit:40},function(d){
-          vm.listData.list = vm.listData.list.concat(d.data)
+        console.log('alllen:'+vm.listData.list.length)
+//        let pagenum = Math.ceil(vm.listData.list.length/20)
+        let offset =  vm.listData.list.length , limit = vm.listData.list.length + 20;
+        console.log('offset:'+offset+','+'limit:'+limit)
+        if(vm.pageEnd == true){
+          jsonp.get(IF.getEbookList,{cid:vm.getListCid,offset:offset,limit:20},function(d){
+            vm.listData.list = vm.listData.list.concat(d.data)
 
-          console.log(JSON.stringify(vm.listData.list))
+            d.data.length < 20 ? vm.pageEnd = false : vm.pageEnd = true
 
-        })
+          })
+        }
       })
     },
     methods:{
@@ -88,6 +101,11 @@
         let vm = this
         jsonp.get(IF.getEbookList,{cid:x},function(d){
           vm.listData.list = d.data
+
+          vm.getListCid = x
+
+          d.data.length < 20 ? vm.pageEnd = false : vm.pageEnd = true
+
         })
         vm.classify.show = !vm.classify.show
       }
@@ -103,10 +121,10 @@
   .ebook_list>ul>li{width:33.33%;overflow:hidden;}
   .ebook_list>ul>li .box{width:100%;height:9rem;padding:0.25rem;}
   .ebook_list>ul>li .box img{width:100%;height:100%;border:1px solid #333;}
-  .tab{width:100%;height:3rem;background:#fff;line-height:3rem;}
+  .tab{width:100%;height:3rem;background:#fff;line-height:3rem;position:relative;z-index:2;}
   .tab>div{width:50%;height:100%;text-align:center;background:url('../../assets/img/arrows2.png') no-repeat scroll right center;}
   .tab>.cur{border-bottom:2px solid #FD7014}
-  .classify{width:100%;position:absolute;top:3rem;}
+  .classify{width:100%;height:100%;position:absolute;padding-top:3rem;overflow:auto;}
   .classify>ul{width:100%;}
   .classify>ul>li{width:100%;line-height:3rem;background:#fff;border-top:1px solid #eee;text-indent:2rem;}
 </style>
