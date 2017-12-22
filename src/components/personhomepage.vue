@@ -144,7 +144,7 @@
             BP = _this.$store.state.BP ,
             begin = BS.date.years - 1 + '-' + BS.date.month + '-01',
             end = BS.date.years + '-' + BS.date.month + BS.date.days;
-        BS.getData(IF.getUserHomePage,'GET',{userId:BP.userId,begin:begin,end:end},true,null,function(d){
+        BS.getData(IF.getUserHomePage,'GET',{schoolId:BP.schoolId,userId:BP.userId,begin:begin,end:end},true,null,function(d){
           _this.curveData.sum = d.data.sum;
           for(var i in d.data.list){
             _this.curveData.data.push(d.data.list[i].num);

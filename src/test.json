@@ -1,0 +1,40 @@
+{
+  "Version": "1.0",
+  "Charset": "UTF-8",
+  "auth": "sesson_temp",
+  "saltkey": "saltkey_temp",
+  "sid": "sid_temp",
+  "userid": "userid_temp",
+  "total": "total_temp",
+  "ipage": "ipage_temp",
+  "error": "error_temp",
+  "data": {
+    "my": {
+      "id": "2",
+      "Real_Name": "小哥",
+      "image": "5151",
+    },
+    "list": [
+      {
+        "id": "2",
+        "Real_Name": "小哥",
+        "image": "5151",
+      },
+      {
+        "id": "1",
+        "Real_Name": "hello",
+        "image": "12345678.jpg",
+      },
+      {
+        "id": "3",
+        "Real_Name": "小红",
+        "image": "1",
+      },
+      {
+        "id": "4",
+        "Real_Name": "小王",
+        "image": "1",
+      }
+    ]
+  }
+}

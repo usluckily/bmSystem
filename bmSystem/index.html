@@ -1,0 +1,17 @@
+<!DOCTYPE html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><title>bmsystem</title><link rel=stylesheet type=text/css><script>//解决ios被动传参延时在该开发模式下的影响
+      window.iosParams = {
+        s1:'',
+        s2:'',
+        userId:''
+      };
+      function getUserInfo(s1,s2,s3,s4,s5,s6,s7,s8){
+        window.iosParams.s1 = s1;
+        window.iosParams.s2 = s2;
+        window.iosParams.userId = s7;
+      }
+
+      window.onload = function(){
+//        getUserInfo(1,2)
+      }
+
+      //解决ios被动传参延时在该开发模式下的影响</script><link href=./static/css/app.12193f547c0729b24df0f3f6da53d7e5.css rel=stylesheet></head><body><div id=app></div><script type=text/javascript src=./static/js/manifest.18c6df15586c8006ff0a.js></script><script type=text/javascript src=./static/js/vendor.2db7a49b4d0f73330384.js></script><script type=text/javascript src=./static/js/app.dda3f348099d9cf631d7.js></script></body></html>

@@ -15,7 +15,8 @@
               <img src="../../assets/img/yddr-yinguan.png" v-if="data.my.ranking == '2'"/>
               <img src="../../assets/img/yddr-tongguan.png" v-if="data.my.ranking == '3'"/>
             </div>
-            <img :src="data.my.headPic" class="headPic"/>
+            <img :src="data.my.headPic" class="headPic" v-if="data.my.headPic"/>
+            <img src="../../assets/img/person_head_icon.jpg" class="headPic" v-else/>
           </div>
           <div class="lc">
             <h4>{{ data.my.Real_Name }}</h4>
@@ -29,15 +30,15 @@
           <div class="ra">
             <div class="c_yellow">借读{{ data.my.num }}次</div>
           </div>
-          <div class="rb">
-            <div>{{ data.my.likes }}</div>
-            <div><img :src="data.my.likes > 0 ? require('../../assets/img/yuedudaren_like2.png') : require('../../assets/img/yuedudaren_like1.png')"/></div>
-          </div>
+          <!--<div class="rb">-->
+            <!--<div>{{ data.my.likes }}</div>-->
+            <!--<div><img :src="data.my.likes > 0 ? require('../../assets/img/yuedudaren_like2.png') : require('../../assets/img/yuedudaren_like1.png')"/></div>-->
+          <!--</div>-->
         </div>
       </li>
       <!--my-->
 
-      <li v-for="(i,index) in data.list" @click="setHash('/drsbooks/'+i.id)">
+      <li v-for="(i,index) in data.list" ><!-- @click="setHash('/drsbooks/'+i.id)" -->
         <div class="l">
           <!--ranking-->
           <div class="la" v-if="i.ranking == '1'"><img src="../../assets/img/first.png"/></div>
@@ -51,7 +52,8 @@
               <img src="../../assets/img/yddr-yinguan.png" v-if="i.ranking == '2'"/>
               <img src="../../assets/img/yddr-tongguan.png" v-if="i.ranking == '3'"/>
             </div>
-            <img :src="i.headPic" class="headPic"/>
+            <img :src="i.headPic" class="headPic" v-if="i.headPic"/>
+            <img src="../../assets/img/person_head_icon.jpg" class="headPic" v-else/>
           </div>
           <div class="lc">
             <h4 style="color:#ff3434;">{{ i.Real_Name }}</h4>
@@ -65,10 +67,10 @@
           <div class="ra">
             <div class="c_red">借读{{ i.num }}次</div>
           </div>
-          <div class="rb">
-            <div>{{ i.likes }}</div>
-            <div><img :src="i.likes > 0 ? require('../../assets/img/yuedudaren_like2.png') : require('../../assets/img/yuedudaren_like1.png')" @click="likes($event,i,data.my)" data-m="123"/></div>
-          </div>
+          <!--<div class="rb">-->
+            <!--<div>{{ i.likes }}</div>-->
+            <!--<div><img :src="i.likes > 0 ? require('../../assets/img/yuedudaren_like2.png') : require('../../assets/img/yuedudaren_like1.png')" @click="likes($event,i,data.my)" data-m="123"/></div>-->
+          <!--</div>-->
         </div>
       </li>
     </ul>
@@ -125,7 +127,7 @@
   .lc h4{font-size:0.85rem;}
   .lc p{font-size:0.7rem;color:#999;}
 
-  .ra{width:6rem;color:#ff3434;font-size:0.85rem;text-align:right;}
+  .ra{width:8rem;color:#ff3434;font-size:0.85rem;text-align:right;}
   .rb{width:3rem;}
   .rb > div{margin:0.5rem 0;}
   .rb:nth-child(2) img{width:1.2rem;}

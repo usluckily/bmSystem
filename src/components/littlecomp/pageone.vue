@@ -34,7 +34,8 @@
         nav:{
           list:[
             {title:'图书馆',hash:'/page/1'},
-            {title:'电子图书',hash:'/outlinks/'}
+//            {title:'电子图书',hash:'/outlinks/'},
+            {title:'电子图书',hash:'http://xld.xiaobenxiong.net/XBXWeiXinBookVideo/index.html'},
           ]
         },
         outlink:{

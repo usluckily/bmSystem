@@ -25,33 +25,38 @@ var proxyTable = config.dev.proxyTable
 var app = express()
 var compiler = webpack(webpackConfig)
 
-//!@#
-app.get('/pageList',function(req,res,next){
-  console.log('xxxxxxxxxxx');
-  res.send({
-    data:{
-      msg:'msg',
-      list:[
-        {title:'AASDSADSD',author:'理想国度',type:'文学',content:'GFDGDFG',hash:'/article/1',id:'1',ranking:'1'},
-        {title:'AASDSADSD',author:'理想国度',type:'文学',content:'GFDGDFG',hash:'/article/1',id:'1',ranking:'1'},
-        {title:'AASDSADSD',author:'理想国度',type:'文学',content:'GFDGDFG',hash:'/article/1',id:'1',ranking:'1'}
-      ]
+//my code 中转页面请求
+var bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+let request = require('request') ,
+  remoteHost = 'http://192.168.0.37:8181' // 实际要请求的地址
+
+app.all('/nuotu/*',function(req,res,next){
+  let url = '' , api = req._parsedUrl.path
+
+  console.log('api:'+api)
+  console.log('param:'+JSON.stringify(req.body))
+
+  for(var i in req.body){
+    url+='&'+i+'='+encodeURI(req.body[i])
+  }
+
+  url = remoteHost + api + url
+  console.log(url);
+
+  request(url, function (error, response, body) {
+    if (!error && response.statusCode == 200) {
+      // console.log(body)
+      res.send(body)
+    }else{
+      console.log('err:'+error)
+      res.send(error)
     }
   })
-});
-app.get('/article',function(req,res,next){
-  console.log('article');
-  res.send(req.query.id);
-});
-app.get('/api',function(req,res,next){
-  res.send({
-    data:{
-      my:{name:'cvffsdg'},
-      list:[{name:'dffdgdfg111'}]
-    }
-  });
-});
-//!@#
+})
+//my code
 
 
 var devMiddleware = require('webpack-dev-middleware')(compiler, {

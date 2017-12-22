@@ -31,12 +31,12 @@
 
       <div class="card_foo clearfix">
         <div class="l" v-if="state.type=='A' && state.type!='D'">7小时前</div>
-        <div class="r">
-          <span v-if="state.type=='A' && state.type!='D'">{{ i.likes }}</span><!--
-         --><span></span><!--
-         --><span @click="modalShow(i,'确认将此书加入书架？','0',$event)" v-if="state.type=='A'">加入书架</span><span class="single" @click="modalShow(i,'确认取消？','1')" v-if="state.type=='B'">取消</span><span class="single"v-if="state.type=='C'">借读{{ i.num || i.read_num }}次</span>
+        <!--<div class="r">-->
+          <!--<span v-if="state.type=='A' && state.type!='D'">{{ i.likes == 'null' ? '' : i.likes }}</span>&lt;!&ndash;-->
+         <!--&ndash;&gt;<span></span>&lt;!&ndash;-->
+         <!--&ndash;&gt;<span @click="modalShow(i,'确认将此书加入书架？','0',$event)" v-if="state.type=='A'">加入书架</span><span class="single" @click="modalShow(i,'确认取消？','1')" v-if="state.type=='B'">取消</span><span class="single"v-if="state.type=='C'">借读{{ i.num || i.read_num }}次</span>-->
 
-        </div>
+        <!--</div>-->
       </div>
     </div>
   </div>

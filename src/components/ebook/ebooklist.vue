@@ -124,7 +124,7 @@
   .tab{width:100%;height:3rem;background:#fff;line-height:3rem;position:relative;z-index:2;}
   .tab>div{width:50%;height:100%;text-align:center;background:url('../../assets/img/arrows2.png') no-repeat scroll right center;}
   .tab>.cur{border-bottom:2px solid #FD7014}
-  .classify{width:100%;height:100%;position:absolute;padding-top:3rem;overflow:auto;}
+  .classify{width:100%;height:100%;position:absolute;padding-top:3rem;overflow:auto;z-index:999;}
   .classify>ul{width:100%;}
   .classify>ul>li{width:100%;line-height:3rem;background:#fff;border-top:1px solid #eee;text-indent:2rem;}
 </style>

@@ -1,3 +1,4 @@
+<script src="../../../receiveandborrow/src/main.js"></script>
 <template>
   <transition name="page">
     <div class="all">
@@ -65,7 +66,7 @@
     methods:{
       getData () {
         let _this = this , BP = this.$store.state.BP;
-        BS.getData(IF.getFavorite,'GET',{userId:BP.userId},true,null,function(d){
+        BS.getData(IF.getFavorite,'GET',{schoolId:BP.schoolId,userId:BP.userId},true,null,function(d){
           _this.listData.list = d.data
 
         });

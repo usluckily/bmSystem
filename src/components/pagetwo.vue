@@ -63,6 +63,10 @@
     },
     created () {
 //      alert('pageTwo:'+JSON.stringify(this.$store.state.iosParams));
+      if(window.GreenSchool){
+        GreenSchool.showTitleText('推荐')
+      }
+
     }
   }
 </script>

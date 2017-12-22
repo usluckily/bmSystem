@@ -10,7 +10,7 @@
     </div>
 
     <div class="r">
-      <span>{{ likes }}喜欢</span>
+      <span style="color:#999;">{{ likes }}喜欢</span>
       <span class="c_yellow" @click="modalShow(modal.bookId,'确认将此书加入书架？','0')">加入书架</span>
     </div>
   </div>

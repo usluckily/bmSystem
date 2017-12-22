@@ -20,26 +20,26 @@
 
       <h4 class="module-tit">教育资源</h4>
 
-      <div class="items">
-        <p class="items-tit">啊实打实大<span>更多></span> </p>
-        <div class="lists-list">
-          <div>
-            <img src="http://www.xiaobenxiong.net/BookFile/GameApk/NewVideo/pic/teluoyiyizhiyounaxielingrenzhenjingdefaxian.jpg"/>
-            <p>方法是</p>
-          </div>
+      <!--<div class="items">-->
+        <!--<p class="items-tit">啊实打实大<span>更多></span> </p>-->
+        <!--<div class="lists-list">-->
+          <!--<div>-->
+            <!--<img src="http://www.xiaobenxiong.net/BookFile/GameApk/NewVideo/pic/teluoyiyizhiyounaxielingrenzhenjingdefaxian.jpg"/>-->
+            <!--<p>方法是</p>-->
+          <!--</div>-->
 
-          <div>
-            <img src="http://www.xiaobenxiong.net/BookFile/GameApk/NewVideo/pic/teluoyiyizhiyounaxielingrenzhenjingdefaxian.jpg"/>
-            <p>方法是</p>
-          </div>
-        </div>
-      </div>
+          <!--<div>-->
+            <!--<img src="http://www.xiaobenxiong.net/BookFile/GameApk/NewVideo/pic/teluoyiyizhiyounaxielingrenzhenjingdefaxian.jpg"/>-->
+            <!--<p>方法是</p>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
 
       <div class="items" v-for="i in data.footer">
-        <p class="items-tit">{{ i.category.name }} <span>更多></span> </p>
+        <p class="items-tit">{{ i.category.name }} <router-link tag="span" :to="'/videolist/'+i.category.id+'?name='+i.category.name">更多></router-link> </p>
         <div class="lists-list">
-          <div v-for="j in i.video">
-            <img :src="host+j.vediocover"/>
+          <div v-for="j in i.video" @click="jump(j)">
+            <img :src="host+j.vediocover" />
             <p>{{ j.vedioname }}</p>
           </div>
         </div>
@@ -91,6 +91,11 @@
           vm.data.center = d.data.center
           vm.data.footer = d.data.footer
         })
+      },
+      methods:{
+        jump(x){
+          this.$router.push({name:'videoplay',params:{id:x}})
+        }
       },
       components:{
         eb_tab:ebtab,

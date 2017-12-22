@@ -6,6 +6,7 @@
       <div class="card_box">
         <div v-for="i in list" :style="{backgroundColor:i.bg}">
           <router-link :to=" '/ebooklist/'+i.id "><img :src="host+i.image" @error="setImg"/></router-link>
+          <!--<div ><img :src="host+i.image" @error="setImg"/></div>-->
         </div>
       </div>
       <eb_tab :ebooktab="ebooktab"></eb_tab>
@@ -23,14 +24,14 @@
     data(){
       return{
         list:[
-          {pic:require('../assets/img/ebook/zaojiao.png')},
-          {pic:require('../assets/img/ebook/youjiao.png')},
-          {pic:require('../assets/img/ebook/xueshengyuedu.png')},
-          {pic:require('../assets/img/ebook/wenxue.png')},
-          {pic:require('../assets/img/ebook/shenghuobaike.png')},
-          {pic:require('../assets/img/ebook/pengrenmeishi.png')},
-          {pic:require('../assets/img/ebook/lizhi.png')},
-          {pic:require('../assets/img/ebook/baike.png')},
+          {pic:require('../assets/img/ebook/zaojiao.png'),to:'http://xld.xiaobenxiong.net/XBXWeiXinBookVideo/Book.aspx?id=3&tag=all&codevalue=all'},
+          {pic:require('../assets/img/ebook/youjiao.png'),to:'http://xld.xiaobenxiong.net/XBXWeiXinBookVideo/Book.aspx?id=2&tag=all&codevalue=all'},
+          {pic:require('../assets/img/ebook/xueshengyuedu.png'),to:'http://xld.xiaobenxiong.net/XBXWeiXinBookVideo/Book.aspx?id=3&tag=all&codevalue=all'},
+          {pic:require('../assets/img/ebook/wenxue.png'),to:'http://xld.xiaobenxiong.net/XBXWeiXinBookVideo/Book.aspx?id=4&tag=all&codevalue=all'},
+          {pic:require('../assets/img/ebook/shenghuobaike.png'),to:'http://xld.xiaobenxiong.net/XBXWeiXinBookVideo/Book.aspx?id=5&tag=all&codevalue=all'},
+          {pic:require('../assets/img/ebook/pengrenmeishi.png'),to:'http://xld.xiaobenxiong.net/XBXWeiXinBookVideo/Book.aspx?id=6&tag=all&codevalue=all'},
+          {pic:require('../assets/img/ebook/lizhi.png'),to:'http://xld.xiaobenxiong.net/XBXWeiXinBookVideo/Book.aspx?id=7&tag=all&codevalue=all'},
+          {pic:require('../assets/img/ebook/baike.png'),to:'http://xld.xiaobenxiong.net/XBXWeiXinBookVideo/Book.aspx?id=8&tag=all&codevalue=all'},
         ],
         host:'http://120.76.144.50',
         nav:{

@@ -35,13 +35,18 @@
     methods:{
       getData () {
         let _this = this , BP = _this.$store.state.BP;
-        BS.getData(IF.getTheBookYouWouldLike,'GET',{userId:BP.userId},true,null,function(d){
+        BS.getData(IF.getTheBookYouWouldLike,'GET',{schoolId:BP.schoolId,userId:BP.userId},true,null,function(d){
           _this.listData.list = d.data
         });
       }
     },
     created () {
       this.getData()
+
+      if(window.GreenSchool){
+        GreenSchool.showTitleText('猜你喜欢')
+      }
+
     }
   }
 </script>

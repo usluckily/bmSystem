@@ -13,11 +13,11 @@ Vue.config.productionTip = false
 Vue.use(Vuex)
 
 
-let basicParams = {jjUserId:'',userId:'2',schoolId:'1',classId:'1',Real_Name:'',likes:'',image:'',borrow_Number:'',Ic_Number:'',sex:'',className:''};
+let basicParams = {jjUserId:'978765122',userId:'2',schoolId:'41',classId:'1',Real_Name:'',likes:'',image:'',borrow_Number:'',Ic_Number:'',sex:'',className:''};
 if(window.GreenSchool){
   basicParams.jjUserId = GreenSchool.getUserID();
   GreenSchool.showLeftBtn(false);
-  BS.getData(IF.getUserBasic,'GET',{jjUserId:basicParams.jjUserId},false,null,function(d){
+  BS.getData(IF.getUserBasic,'GET',{schoolId:BP.schoolId,jjUserId:basicParams.jjUserId},false,null,function(d){
     for(var i in d.data){
       basicParams[i] = d.data[i]
     }
@@ -28,7 +28,7 @@ if(window.GreenSchool){
     basicParams.jjUserId = window.iosParams.userId;
     if(window.iosParams.userId != ''){
 
-      BS.getData(IF.getUserBasic,'GET',{jjUserId:basicParams.jjUserId},false,null,function(d){
+      BS.getData(IF.getUserBasic,'GET',{schoolId:BP.schoolId,jjUserId:basicParams.jjUserId},false,null,function(d){
         for(var i in d.data){
           basicParams[i] = d.data[i]
         }

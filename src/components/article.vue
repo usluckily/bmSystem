@@ -112,7 +112,7 @@
   .article_head{width:100%;}
   .article_head h4{width:100%;padding-top:1rem;}
   .article_head p{width:100%;font-size:0.85rem;}
-  .article{font-size:0.8rem;padding-top:2rem;}
+  .article{font-size:0.8rem;padding-top:2rem;color:#777;}
   .article p{white-space:normal;line-height:1.2rem;letter-spacing:1.5px;}
   .article img{max-width:100%;margin:0.5rem 0;}
 </style>

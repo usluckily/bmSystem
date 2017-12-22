@@ -2,20 +2,20 @@
   <div class="footer">
     <ul class="clearfix">
       <li>
-        <a v-on:click="setHash('/page/1')">
-          <div class="icon_box" ><img src="../../assets/img/icon-1.png" :class="page.pageOne ? 'cur' : ''"/></div>
+        <a v-on:click="setHash('/page/1')" :class="page.pageOne ? 'cur' : ''">
+          <div class="icon_box" ><img src="../../assets/img/icon-1.png" /></div>
         </a>
         <p>图书</p>
       </li>
       <li>
-        <a v-on:click="setHash('/page/2')">
-          <div class="icon_box" ><img src="../../assets/img/icon-2.png" :class="page.pageTwo ? 'cur' : ''"/></div>
+        <a v-on:click="setHash('/page/2')" :class="page.pageTwo ? 'cur' : ''">
+          <div class="icon_box" ><img src="../../assets/img/icon-2.png" /></div>
         </a>
         <p>推荐</p>
       </li>
       <li>
-        <a v-on:click="setHash('/page/3')">
-          <div class="icon_box" ><img src="../../assets/img/icon-3.png" :class="page.pageThree ? 'cur' : ''"/></div>
+        <a v-on:click="setHash('/page/3')" :class="page.pageThree ? 'cur' : ''">
+          <div class="icon_box" ><img src="../../assets/img/icon-3.png" /></div>
         </a>
         <p>我的</p>
       </li>

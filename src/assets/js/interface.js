@@ -1,7 +1,7 @@
 /**
  * Created by Administrator on 2017/4/10.
  */
-let host = '/nuotu' , ehost = 'http://42.159.228.129';
+let host = '/nuotu' , ehost = 'http://120.76.144.50';
 
 export default{
   getUserBasic:host+'/jjNtBook_book.do?method=getUserInfo',//jjUserId

@@ -6,8 +6,8 @@
         <h4 class="modalHeader">提示</h4>
         <div class="modalContent">{{ modal.content }}</div>
         <div class="modalFooter clearfix">
-          <div class="modalBtn" @click="cancel()" id= "modalCancel" >取消</div>
           <div class="modalBtn"  @click="modal.callback()" id="modalSure" >确定</div>
+          <div class="modalBtn" @click="cancel()" id= "modalCancel" >取消</div>
         </div>
       </div>
     </div>
@@ -72,12 +72,12 @@
 <style scoped>
   /*modal*/
   .modalBox{position:fixed;width:100%;height:100%;top:0;left:0;z-index:102;}
-  .modal{width:13rem;margin:-3rem auto 0;top:50%;background:#fff;position:relative;border-radius:0.4rem;overflow:hidden;transition:transform 0.4s ease;}
+  .modal{width:15rem;margin:-3rem auto 0;top:40%;background:#fff;position:relative;border-radius:0.8rem;overflow:hidden;transition:transform 0.4s ease;}
   .modal .modalHeader,.modal .modalContent,.modal .modalFooter{text-align:center;}
-  .modal .modalHeader{font-size:0.9rem;padding:1em 0.5rem 0.2rem 0.5rem;}
-  .modal .modalContent{font-size:0.8rem;padding:0 0.5rem 1rem 0.5rem;}
-  .modal .modalFooter{border-top:1px solid #e2e2e2;padding:0;line-height:1.8rem;}
-  .modal .modalFooter .modalBtn{float:left;width:50%;height:100%;font-size:0.8rem;}
+  .modal .modalHeader{font-size:0.9rem;padding:1em 0.5rem 0.2rem 0.5rem;font-weight: bold;}
+  .modal .modalContent{font-size:0.8rem;padding:0 0.5rem 1.5rem 0.5rem;}
+  .modal .modalFooter{border-top:1px solid #e2e2e2;padding:0;line-height:2.5rem;}
+  .modal .modalFooter .modalBtn{float:left;width:50%;height:100%;font-size:0.9rem;}
   .modal .modalFooter .modalBtn:first-child{border-right:1px solid #e2e2e2;}
   .modalBtnBgGray{background:#e2e2e2;}
 

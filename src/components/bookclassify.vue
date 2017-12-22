@@ -18,6 +18,7 @@
   import $ from 'jquery'
   import IF from '@/assets/js/interface'
   import {BS} from '@/assets/js/base'
+  import sl from '@/assets/js/scrollload'
 
   export default{
     name:'bookclassify',
@@ -70,20 +71,32 @@
             }
 
           }
-        }
+        },
+        pageIndexName:1
+      }
+    },
+    methods:{
+      getData(){
+        let _this = this , BP = _this.$store.state.BP , kind = this.$route.params.id;
+        BS.getData(IF.getKindList,'GET',{schoolId:BP.schoolId,kind:$.trim(kind),userId:BP.userId,school_Id:BP.schoolId},true,null,function(d){
+          _this.listData.list = d.data;
+        });
+      },
+      addData(){
+        let _this = this , BP = _this.$store.state.BP , kind = this.$route.params.id;
+        BS.getData(IF.getKindList,'GET',{schoolId:BP.schoolId,kind:$.trim(kind),userId:BP.userId,school_Id:BP.schoolId,pageIndexName:_this.pageIndexName++},true,null,function(d){
+          _this.listData.list.concat(d.data);
+        });
       }
     },
     created () {
-      let _this = this , BP = _this.$store.state.BP , kind = this.$route.params.id;
-//      setTimeout(function(){
-//        _this.listData.list = [
-//          {"id":"10","book_Name":"上下五百年","book_ISBN":"7414","first_Author":"gdag","book_Kind_Name":"政治、法律","introduce":"dsga","book_Price":"23.0","likes":"9","image":"dga"},
-//          {"id":"5","book_Name":"达芬奇密码","book_ISBN":"5454","first_Author":"hh","book_Kind_Name":"政治、法律","introduce":"ff" ,"book_Price":"555.0","likes":"5","image":"asga"}
-//        ]
-//      },5000);
-      BS.getData(IF.getKindList,'GET',{kind:$.trim(kind),userId:BP.userId,school_Id:BP.schoolId},true,null,function(d){
-        _this.listData.list = d.data;
-      });
+      this.getData()
+    },
+    mounted(){
+      let vm = this
+      sl.init('.all',function(){
+        vm.addData()
+      })
     },
     components:{
       books_list:bookslist,

@@ -1,6 +1,7 @@
 <template>
   <div class="ebook-tab">
     <router-link :to="i.to" tag="div" v-for="i in this.ebooktab" :key="i.to" :class="i.cur ? 'cur' : ''">{{ i.tit }}</router-link>
+    <!--<div v-for="i in this.ebooktab" :key="i.to" :class="i.cur ? 'cur' : ''" @click="jump(i.to)">{{ i.tit }}</div>-->
   </div>
 </template>
 <script>
@@ -10,6 +11,11 @@
       data(){
         return {
 
+        }
+      },
+      methods:{
+        jump(url){
+          location.href = url
         }
       }
     })

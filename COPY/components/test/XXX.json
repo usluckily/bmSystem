@@ -1,0 +1,21 @@
+{
+  "category": {
+    "id": "14",
+    "name": "\u4e09\u5b57\u7ecf",
+    "image": ""
+  },
+  "video": [
+    {
+      "id": "376",
+      "vedioname": "\u66f9\u64cd\u5728\u5c11\u5e74\u65f6\u671f\u7684\u8f6c\u53d8",
+      "vediocover": "\/BookFile\/GameApk\/NewVideo\/pic\/caocaozaishaonianshiqidezhuanbian.jpg",
+      "vediourl": "\/BookFile\/GameApk\/NewVideo\/video\/caocaozaishaonianshiqidezhuanbian.mp4"
+    },
+    {
+      "id": "377",
+      "vedioname": "\u5510\u5bc5\u5b66\u753b",
+      "vediocover": "\/BookFile\/GameApk\/NewVideo\/pic\/tangyinxuehua.jpg",
+      "vediourl": "\/BookFile\/GameApk\/NewVideo\/video\/tangyinxuehua.mp4"
+    }
+  ]
+}

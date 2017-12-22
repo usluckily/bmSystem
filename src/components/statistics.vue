@@ -1,7 +1,7 @@
 <template>
   <transition name="page">
     <div class="all" style="z-index:4;">
-      <my_nav slot="nav" :parentData="nav"></my_nav>
+      <!--<my_nav slot="nav" :parentData="nav"></my_nav>-->
 
       <div class="content">
         <books_list :listState="state" :listData="listData" ></books_list>

@@ -1,7 +1,7 @@
 <template>
   <transition name="page">
     <div class="all" style="z-index:4;">
-      <my_nav :parentData="nav"></my_nav>
+      <!--<my_nav :parentData="nav"></my_nav>-->
 
       <div class="banner">
         <img src="../assets/img/yddr_banner.png"/>
@@ -47,7 +47,7 @@
         let _this = this , BP = _this.$store.state.BP;
         switch(type){
           case 'school':
-            BS.getData(IF.getReadTalentFromSchool,'GET',{userId:BP.userId},true,null,function(d){
+            BS.getData(IF.getReadTalentFromSchool,'GET',{schoolId:BP.schoolId,userId:BP.userId},true,null,function(d){
               _this.listData.my = d.data.my;
               _this.listData.list = d.data.list
 
@@ -59,7 +59,7 @@
             });
             break;
           case 'class':
-            BS.getData(IF.getReadTalentFromClass,'GET',{userId:BP.userId},true,null,function(d){
+            BS.getData(IF.getReadTalentFromClass,'GET',{schoolId:BP.schoolId,userId:BP.userId},true,null,function(d){
               _this.listData.my = d.data.my;
               _this.listData.list = d.data.list
 
